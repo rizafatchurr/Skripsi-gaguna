@@ -10,200 +10,369 @@
 
     <div id="app-container">
         <div class="floor"></div>
+        <div class="vase-left">🪴</div>
+        <div class="vase-right">🪴</div>
 
         <div id="screen-home" class="screen active">
             <div class="board">
-                <h1>BANGUN DATAR</h1>
+                <h1 class="title-main">BANGUN DATAR</h1>
                 <div class="shapes-container">
                     <div class="shape square"></div>
                     <div class="shape triangle"></div>
                     <div class="shape parallelogram"></div>
                 </div>
-                <p>Pembelajaran Untuk Siswa Kelas IV</p>
-                <button class="btn-start" onclick="showScreen('screen-menu')">START</button>
+                <p class="subtitle-white">Pembelajaran Untuk Siswa Kelas IV</p>
+                <button class="btn-start" onclick="showScreen('screen-petunjuk')">START</button>
             </div>
-            <div class="deco-item" style="top: 20px; left: 20px; font-size: 50px;">📏</div>
-            <div class="deco-item" style="top: 20px; right: 20px; font-size: 50px;">✏️</div>
-        </div>
-
-        <div id="screen-menu" class="screen">
-            <div class="notebook">
-                <div class="menu-grid">
-                    <button class="icon-btn" onclick="showScreen('screen-profil')"><span>👤</span><br>Profil</button>
-                    <button class="icon-btn" onclick="showScreen('screen-home')"><span>🏠</span><br>Home</button>
-                    <button class="icon-btn" onclick="showScreen('screen-cptp')"><span>🎯</span><br>CP dan TP</button>
-                    
-                    <button class="icon-btn"><span>🎵</span><br>Musik</button>
-                    <button class="icon-btn" onclick="showScreen('screen-materi-1')"><span>📖</span><br>Materi</button>
-                    <button class="icon-btn"><span>❓</span><br>Latihan</button>
-                    
-                    <button class="icon-btn"><span>🎮</span><br>Game</button>
-                    <button class="icon-btn" onclick="showScreen('screen-petunjuk')"><span>⚙️</span><br>Petunjuk</button>
-                    <button class="icon-btn"><span>🚪</span><br>Quit</button>
-                </div>
-            </div>
+            <div class="deco-item" style="top: 150px; right: 50px; font-size: 80px; transform: rotate(30deg);">📏</div>
+            <div class="deco-item" style="top: 40px; right: 80px; font-size: 70px; transform: rotate(-45deg);">✏️</div>
+            <div class="deco-item" style="top: 40px; left: 80px; font-size: 70px; transform: rotate(-20deg);">📐</div>
+            <div class="deco-item" style="top: 180px; left: 50px; font-size: 70px; transform: rotate(15deg);">🧮</div>
         </div>
 
         <div id="screen-petunjuk" class="screen">
-            <h2 class="title-top">PETUNJUK PENGGUNAAN</h2>
-            <div class="notebook">
+            <h2 class="title-petunjuk">PETUNJUK PENGGUNAAN</h2>
+            <div class="notebook" style="padding-top: 50px;">
                 <div class="petunjuk-grid">
-                    <div class="petunjuk-item"><span>🏠</span> Home</div>
-                    <div class="petunjuk-item"><span>❓</span> Latihan soal</div>
-                    <div class="petunjuk-item"><span>➡️</span> Selanjutnya</div>
-                    <div class="petunjuk-item"><span>🚪</span> Quit</div>
-                    <div class="petunjuk-item"><span>⬅️</span> Sebelumnya</div>
-                    <div class="petunjuk-item"><span>🎮</span> Game</div>
-                    <div class="petunjuk-item"><span>📖</span> Materi</div>
-                    <div class="petunjuk-item"><span>🎵</span> Musik</div>
+                    <div class="pet-item"><span class="circle-icon">🏠</span> Home</div>
+                    <div class="pet-item"><span class="circle-icon" style="font-weight: bold; font-family: Arial;">?</span> Latihan soal</div>
+                    <div class="pet-item"><span class="circle-icon">➡️</span> Selanjutnya</div>
+                    <div class="pet-item"><span class="circle-icon">🚪</span> Quit</div>
+                    <div class="pet-item"><span class="circle-icon">⬅️</span> Sebelumnya</div>
+                    <div class="pet-item"><span class="plain-icon">🎮</span> Game</div>
+                    <div class="pet-item"><span class="book-icon">📖</span> Materi</div>
+                    <div class="pet-item"><span class="plain-icon text-black">🎵</span> Musik</div>
                 </div>
             </div>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-home')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-menu')">➡️</button>
+        </div>
+
+        <div id="screen-menu" class="screen">
+            <div class="deco-item clock">🕒</div>
+            <div class="notebook notebook-menu">
+                <button class="btn-rect profil-pos" onclick="showScreen('screen-profil')">Profil</button>
+                <button class="icon-plain-btn music-pos text-black">🎵</button>
+                <button class="icon-plain-btn controller-pos" onclick="showScreen('screen-game-1')">🎮</button>
+
+                <button class="icon-circle-btn home-icon-pos" onclick="showScreen('screen-home')">🏠</button>
+                <button class="icon-book-btn book-pos" onclick="showScreen('screen-materi-1')">📖</button>
+                
+                <button class="btn-rect cptp-pos" onclick="showScreen('screen-cptp')">CP dan TP</button>
+                <button class="icon-circle-btn question-pos" onclick="showScreen('screen-soal-1')">?</button>
+                <button class="icon-circle-btn exit-pos" onclick="showScreen('screen-home')">🚪</button>
+            </div>
         </div>
 
         <div id="screen-profil" class="screen">
-            <h2 class="title-top text-yellow">PROFIL PELAJAR</h2>
-            <div class="notebook text-left">
-                <p><strong>Nama :</strong> Riza Fatchur Rochim</p>
-                <p><strong>Tempat, tanggal lahir :</strong> Nganjuk, 23 April 2004</p>
-                <p><strong>Alamat :</strong> Dk. Patihan Balongrejo Kab. Nganjuk</p>
-                <p><strong>No Hp :</strong> 085730154791</p>
-                <p><strong>E-mail :</strong> rizafatchurr@gmail.com</p>
-                <p><strong>Motto :</strong> Surodiro joyoningrat Lebur Dening Pangestuti</p>
+            <div class="deco-item clock">🕒</div>
+            <div class="notebook text-left" style="padding: 40px;">
+                <h2 class="title-profil center">PROFIL PELAJAR</h2>
+                <div class="profil-text">
+                    <p><strong>Nama :</strong> Riza Fatchur Rochim</p>
+                    <p><strong>Tempat, tanggal lahir :</strong> Nganjuk, 23 April 2004</p>
+                    <p><strong>Alamat :</strong> Dk. Patihan Balongrejo Kab. Nganjuk</p>
+                    <p><strong>No Hp :</strong> 085730154791</p>
+                    <p><strong>E-mail :</strong> rizafatchurr@gmail.com</p>
+                    <p><strong>Motto :</strong> Surodiro joyoningrat Lebur Dening Pangestuti</p>
+                </div>
             </div>
             <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
         </div>
 
         <div id="screen-cptp" class="screen plain-bg text-left padding-content">
-            <h2 class="text-purple center">CAPAIAN PEMBELAJARAN (CP) DAN TUJUAN<br>PEMBELAJARAN (TP)</h2>
-            
+            <h2 class="title-cptp center">CAPAIAN PEMBELAJARAN (CP) DAN TUJUAN<br>PEMBELAJARAN (TP)</h2>
             <h3>Capaian Pembelajaran (CP) :</h3>
-            <p class="indent">Peserta didik dapat mendeskripsikan ciri berbagai bentuk bangun datar (segiempat, segitiga, segibanyak).</p>
-            
+            <p class="indent">Peserta didik dapat mendeskripsikan ciri berbagai bentuk bangun datar<br>(segiempat, segitiga, segibanyak).</p>
             <h3 class="mt-20">Tujuan Pembelajaran (TP) :</h3>
-            <ol>
+            <ol class="indent">
                 <li>Peserta didik dapat mengidentifikasi pengertian materi bangun datar.</li>
-                <li>Peserta didik dapat menyebutkan jenis-jenis bangun datar.</li>
-                <li>Peserta didik dapat menyebutkan sifat-sifat bangun datar segiempat dan segitiga.</li>
-                <li>Peserta didik dapat menguraikan berbagai bentuk bangun datar segiempat dan segitiga.</li>
+                <li>Peserta didik dapat menyebutkan jenis-jenis bangun datar</li>
+                <li>Peserta didik dapat menyebutkan sifat-sifat bangun datar segiempat dan<br>segitiga.</li>
+                <li>Peserta didik dapat menguraikan berbagai bentuk bangun datar segiempat<br>dan segitiga.</li>
             </ol>
             <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
         </div>
 
         <div id="screen-materi-1" class="screen plain-bg padding-content text-left">
-            <div class="header-materi">
-                <div class="badge">MATERI PEMBELAJARAN<br><span class="circle-num">1</span></div>
-                <h2 class="text-blue">BANGUN DATAR</h2>
-                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
-            </div>
-            
-            <p class="justify mt-20" style="line-height: 1.8;">
-                Pada hari Minggu Dani, Desi, dan Rika bermain ke rumah Adam. Dirumah Adam mereka bercerita sambil bermain, kemudian kakek Adam datang dan bercerita tentang kemarin baru saja membeli barang perabotan rumah tangga dari pasar dan memiliki berbagai bentuk macam bentuk bangun yang sesuai dengan bangun datar. Mereka sangat menikmati cerita kakek. Bagaimana dengan kamu? apakah kamu mempunyai barang dirumah yang memiliki bentuk bangun datar? seberapa jauh kamu mengenal bangun datar? Coba pelajari agar kamu tahu!
-            </p>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
-            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-2')">➡️</button>
+            <div class="header-materi"><div class="badge-curved">MATERI PEMBELAJARAN<br><span class="circle-num">1</span></div><h2 class="text-blue-dark">BANGUN DATAR</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <p class="justify mt-20" style="line-height: 1.8;">Pada hari Minggu Dani, Desi, dan Rika bermain ke rumah Adam. Dirumah Adam mereka bercerita sambil bermain, kemudian kakek Adam datang dan bercerita tentang kemarin baru saja membeli barang perabotan rumah tangga dari pasar dan memiliki berbagai bentuk macam bentuk bangun yang sesuai dengan bangun datar. Mereka sangat menikmati cerita kakek. Bagaimana dengan kamu? apakah kamu mempunyai barang dirumah yang memiliki bentuk bangun datar? seberapa jauh kamu mengenal bangun datar? Coba pelajari agar kamu tahu!</p>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-2')">➡️</button>
         </div>
 
         <div id="screen-materi-2" class="screen plain-bg padding-content text-left">
-            <div class="header-materi">
-                <h2>Pengertian Bangun Datar</h2>
-                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
-            </div>
-            <p class="justify" style="line-height: 1.6;">
-                Bangun datar adalah sebuah obyek benda dua dimensi yang dibatasi oleh garis-garis lurus atau garis lengkung. Karena bangun datar merupakan bangun dua dimensi, maka hanya memiliki ukuran panjang dan lebar oleh sebab itu maka bangun datar hanya memiliki luas dan keliling.
-            </p>
+            <div class="header-materi"><h2>Pengertian Bangun Datar</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <p class="justify" style="line-height: 1.6;">Bangun datar adalah sebuah obyek benda dua dimensi yang dibatasi oleh garis-garis lurus atau garis lengkung. Karena bangun datar merupakan bangun dua dimensi, maka hanya memiliki ukuran panjang dan lebar oleh sebab itu maka bangun datar hanya memiliki luas dan keliling.</p>
             <h2 class="mt-20">Jenis-jenis Bangun Datar</h2>
-            <div class="list-grid">
-                <div>
-                    1. Persegi<br>
-                    2. Persegi Panjang<br>
-                    3. Jajar Genjang<br>
-                    4. Belah Ketupat
-                </div>
-                <div>
-                    5. Layang-layang<br>
-                    6. Trapesium<br>
-                    7. Segitiga
-                </div>
-            </div>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-1')">⬅️</button>
-            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-3')">➡️</button>
+            <div class="list-grid"><div>1. Persegi<br>2. Persegi Panjang<br>3. Jajar Genjang<br>4. Belah Ketupat</div><div style="margin-top: 15px;">5. Layang-layang<br>6. Trapesium<br>7. Segitiga</div></div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-1')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-3')">➡️</button>
         </div>
 
         <div id="screen-materi-3" class="screen plain-bg padding-content text-left">
-            <div class="header-materi">
-                <h2>Sifat-sifat Bangun Datar</h2>
-                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
-            </div>
-            <div class="sifat-list mt-20">
-                <h3>1. Persegi</h3>
-                <ul>
-                    <li>Mempunyai dua sisi yang sejajar dan sama panjang.</li>
-                    <li>Mempunyai empat sumbu simetri lipat.</li>
-                    <li>Mempunyai sumbu simetri putar tingkat empat.</li>
-                </ul>
-                
-                <h3 class="mt-20">2. Persegi Panjang</h3>
-                <ul>
-                    <li>Memiliki empat dua diagonal yang sama panjang</li>
-                    <li>Memiliki 3 lipatan simetris</li>
-                    <li>Memiliki simetri putaran dua</li>
-                </ul>
-            </div>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-2')">⬅️</button>
-            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-4')">➡️</button>
+            <div class="header-materi"><h2>Sifat-sifat Bangun Datar</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div class="sifat-list mt-20"><h3>1. Persegi</h3><ul><li>Memunyai dua sisi yang sejajar dan sama panjang.</li><li>Memunyai empat sumbu simetri lipat.</li><li>Memunyai sumbu simetri putar tingkat empat.</li></ul><h3 class="mt-20">2. Persegi Panjang</h3><ul><li>Memiliki empat dua diagonal yang sama panjang</li><li>Memiliki 3 lipatan simetris</li><li>Memiliki simetri putaran dua</li></ul></div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-2')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-4')">➡️</button>
         </div>
 
         <div id="screen-materi-4" class="screen plain-bg padding-content text-left">
-            <div class="header-materi">
-                <h2>3. Jajar Genjang</h2>
-                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
-            </div>
-            <div class="sifat-list">
-                <ul>
-                    <li>Mempunyai 2 diagonal yang berpotong dalam satu titik dan saling membagi 2 sama panjang.</li>
-                    <li>Mempunyai simetri putar tingkat 2 dan tidak memiliki simetri lipat.</li>
-                </ul>
-                
-                <h3 class="mt-20">4. Belah Ketupat</h3>
-                <ul>
-                    <li>Mempunyai sisi — sisi yang sama panjang.</li>
-                    <li>Sudut — sudut yang saling berhadapan sama besar dan dibelah dua oleh diagonal dengan sama besar.</li>
-                    <li>Diagonalnya saling berpotongan sama panjang dan saling tegak lurus.</li>
-                    <li>Mempunyai 2 sumbu simetri.</li>
-                    <li>Mempunyai 2 simetri lipat dan 2 simetri putar.</li>
-                </ul>
-            </div>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-3')">⬅️</button>
-            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-5')">➡️</button>
+            <div class="header-materi" style="justify-content: flex-end;"><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div class="sifat-list" style="margin-top: -30px;"><h3>3. Jajar Genjang</h3><ul><li>Memunyai 2 diagonal yang berpotong dalam satu titik dan saling membagi 2 sama panjang.</li><li>Memunyai simetri putar tingkat 2 dan tidak memiliki simetri lipat.</li></ul><h3 class="mt-20">4. Belah Ketupat</h3><ul><li>Memunyai sisi — sisi yang sama panjang.</li><li>Sudut — sudut yang saling berhadapan sama besar dan dibelah dua oleh diagonaldengan sama besar.</li><li>Diagonalnya saling berpotongan sama panjang dan saling tegak lurus.</li><li>Mempunyai 2 sumbu simetri.</li><li>Memunyai 2 simetri lipat dan 2 simetri putar.</li></ul></div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-3')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-5')">➡️</button>
         </div>
 
         <div id="screen-materi-5" class="screen plain-bg padding-content text-left">
-            <div class="header-materi">
-                <h2>5. Layang-layang</h2>
-                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            <div class="header-materi" style="justify-content: flex-end;"><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div class="sifat-list" style="margin-top: -30px;"><h3>5. Layang-layang</h3><ul><li>Memunyai 2 pasang sisi yang panjang sama.</li><li>Memunyai satu pasang sudut yang menghadap yang besarnya sama.</li><li>Mempunyai empat titik sudut.</li><li>Diagonal — diagonalnya saling berpotongan tegak lurus.</li><li>Satu diagonalnya dibagi dua sama panjang diagonal yang lain.</li><li>Hanya mempunyai satu simetri lipat.</li></ul><h3 class="mt-20">6. Trapesium</h3><ul><li>Memunyai 4 sisi dan 4 titik sudut.</li><li>Memunyai sepasang sisi yang sejajar tapi tidak sama panjang.</li><li>Memunyai sudut di antara sisi sejajarnya sebesar 180°.</li></ul></div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-4')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-6')">➡️</button>
+        </div>
+
+        <div id="screen-materi-6" class="screen plain-bg padding-content text-left">
+            <div class="header-materi"><h2>7. Segitiga</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div class="sifat-list mt-20"><ul style="line-height: 1.8;"><li><strong>Segi tiga sama sisi :</strong> adalah segitiga yang ketiga sisinya sama panjang dan semua sudutnya sama besar yaitu 60°.</li><li><strong>Segitiga sama kaki :</strong> adalah segitiga yang dua dari tiga sisinya sama panjang dan mempunyai dua sudut sama besar.</li><li><strong>Segi tiga sembarang :</strong> ialah segitiga yang ketiga sisinya memiliki panjang dan memiliki sudut besar yang berbeda.</li></ul></div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-5')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-7')">➡️</button>
+        </div>
+
+        <div id="screen-materi-7" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 36px;">Bentuk Bangun Datar</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="display: flex; align-items: center; gap: 20px;"><h3 style="font-size: 26px;">1. Persegi</h3><div style="width: 120px; height: 120px; background-color: #2abacb;"></div></div>
+            <p class="mt-20">Persegi adalah bangun datar yang dibetuk dari empat buah sisi yang sama panjang dan empat sudut yang sama besar 90° .</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = s x s</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = 4 x s</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan :</strong></p><p>s = sisi atau tulang rusuk</p></div>
+                <div class="rumus-visual"><svg width="120" height="120"><rect x="20" y="20" width="80" height="80" fill="white" stroke="black" stroke-width="2"/><text x="55" y="15" font-size="18">s</text><text x="55" y="118" font-size="18">s</text><text x="5" y="65" font-size="18">s</text><text x="105" y="65" font-size="18">s</text></svg></div>
             </div>
-            <div class="sifat-list">
-                <ul>
-                    <li>Mempunyai 2 pasang sisi yang panjang sama.</li>
-                    <li>Mempunyai satu pasang sudut yang menghadap yang besarnya sama.</li>
-                    <li>Mempunyai empat titik sudut.</li>
-                    <li>Diagonal — diagonalnya saling berpotongan tegak lurus.</li>
-                    <li>Satu diagonalnya dibagi dua sama panjang diagonal yang lain.</li>
-                    <li>Hanya mempunyai satu simetri lipat.</li>
-                </ul>
-                
-                <h3 class="mt-20">6. Trapesium</h3>
-                <ul>
-                    <li>Mempunyai 4 sisi dan 4 titik sudut.</li>
-                    <li>Mempunyai sepasang sisi yang sejajar tapi tidak sama panjang.</li>
-                    <li>Mempunyai sudut di antara sisi sejajarnya sebesar 180°.</li>
-                </ul>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-6')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-8')">➡️</button>
+        </div>
+
+        <div id="screen-materi-8" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">2. Persegi Panjang</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 180px; height: 100px; background-color: #ff0000; margin-left: 30px;"></div>
+            <p class="mt-20">Persegi panjang adalah sebuah bangun datar yang mempunyai dua sisi yang menghadap yang sama panjang dan memiliki empat titik sudut. Persegi panjangnya juga mempunyai sisi yang menghadap sama panjang dan empat titik sudut yang sanma besar yaitu 90°.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = p x l</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = 2 x (p + l)</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>p = panjang<br>l = lebar</p></div>
+                <div class="rumus-visual"><svg width="180" height="120"><rect x="20" y="30" width="140" height="70" fill="#c68a15" stroke="none"/><text x="165" y="70" font-size="20">p</text><text x="85" y="125" font-size="20">l</text></svg></div>
             </div>
-            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-4')">⬅️</button>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-7')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-9')">➡️</button>
+        </div>
+
+        <div id="screen-materi-9" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">3. Jajar Genjang</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 120px; height: 90px; background-color: #923a3a; transform: skewX(-20deg); margin-left: 60px;"></div>
+            <p class="mt-20">Jajar genjang ialah bangun datar 2 dimensi yang mempunyai bentuk 2 pasang rusuk yang masing — masing sama panjang dan sejajar dengan pasangan dan memiliki 2 pasang sudut yang sama besar dengan sudut berhadapan.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = a x t</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = 2 x (alas + sisi miring)</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>a = alas<br>t = tinggi</p></div>
+                <div class="rumus-visual"><svg width="160" height="120"><polygon points="50,20 130,20 100,90 20,90" fill="#c1a07d"/><line x1="60" y1="20" x2="60" y2="90" stroke="black" stroke-dasharray="4" stroke-width="2"/><text x="65" y="60" font-size="18">t</text><text x="55" y="110" font-size="18">a</text></svg></div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-8')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-10')">➡️</button>
+        </div>
+
+        <div id="screen-materi-10" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">4. Belah Ketupat</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 90px; height: 90px; background-color: #e5b32e; transform: rotate(45deg); margin-top: 20px; margin-left: 60px;"></div>
+            <p class="mt-20" style="margin-top: 30px;">Belah ketupat ialah bangun datar yang mempunyai 2 sudut dimensi yang di bentuk oleh 4 rusuk yang sama panjang dan memiliki 2 pasang sudut yang masing-masing sama besar dengan sudut di hadapannya.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = ½ x d1 x d2</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = 4 x s</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>d1 = diagonal 1<br>d2= diagonal 2<br>s = sisi</p></div>
+                <div class="rumus-visual"><svg width="180" height="150"><polygon points="90,10 160,75 90,140 20,75" fill="none" stroke="black" stroke-width="5"/><line x1="90" y1="10" x2="90" y2="140" stroke="black" stroke-dasharray="4" stroke-width="2"/><line x1="20" y1="75" x2="160" y2="75" stroke="black" stroke-dasharray="4" stroke-width="2"/><text x="70" y="55" font-size="18">d1</text><text x="100" y="95" font-size="18">d2</text><text x="30" y="30" font-size="18">s</text><text x="140" y="30" font-size="18">s</text><text x="20" y="120" font-size="18">s</text><text x="145" y="125" font-size="18">s</text></svg></div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-9')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-11')">➡️</button>
+        </div>
+
+        <div id="screen-materi-11" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">5. Layang-layang</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 80px; height: 110px; background-color: #f26f33; clip-path: polygon(50% 0%, 100% 35%, 50% 100%, 0% 35%); margin-left: 60px;"></div>
+            <p class="mt-20">Layang-layang ialah bangun datar yang memiliki 2 dimensi dan 2 pasang rusuk yang masing-masing memiliki pasangan sama panjang dan saling membentuk sudut.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = ½ x d1 x d2</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = 2 x (s panjang + s pendek)</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>d1 = diagonal 1<br>d2 = diagonal 2<br>a,b = sisi pendek<br>c,d = sisi panjang</p></div>
+                <div class="rumus-visual"><svg width="180" height="150"><polygon points="90,10 140,50 90,140 40,50" fill="#679b8a" stroke="black" stroke-width="2"/><line x1="90" y1="10" x2="90" y2="140" stroke="black" stroke-dasharray="4" stroke-width="2"/><line x1="40" y1="50" x2="140" y2="50" stroke="black" stroke-dasharray="4" stroke-width="2"/><text x="60" y="40" font-size="18">d1</text><text x="95" y="70" font-size="18">d2</text><text x="35" y="25" font-size="18">a</text><text x="130" y="30" font-size="18">b</text><text x="35" y="100" font-size="18">c</text><text x="135" y="100" font-size="18">d</text></svg></div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-10')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-12')">➡️</button>
+        </div>
+
+        <div id="screen-materi-12" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">6. Trapesium</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 120px; height: 60px; background-color: #ffaa00; clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%); margin-left: 30px;"></div>
+            <p class="mt-20">Trapesium ialah bangun datar dua dimensi tang dibentuk oleh 4 rusuk diantara nya saling sejajar namun tidak sama panjang.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text"><p><strong>Rumus Luas :</strong></p><ul class="no-bullet"><li>• L = ½ x (sisi atas + sisi bawah) x tinggi</li></ul><p><strong>Rumus Keliling :</strong></p><ul class="no-bullet"><li>• K = Jumlah seluruh sisi</li></ul></div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>t = tinggi<br>a,b,c,d = semua sisi</p></div>
+                <div class="rumus-visual"><svg width="200" height="120"><polygon points="50,20 130,20 160,90 20,90" fill="none" stroke="black" stroke-width="3"/><line x1="65" y1="20" x2="65" y2="90" stroke="black" stroke-dasharray="4" stroke-width="2"/><text x="75" y="65" font-size="18">t</text><text x="35" y="15" font-size="18">a</text><text x="145" y="20" font-size="18">b</text><text x="0" y="90" font-size="18">c</text><text x="165" y="105" font-size="18">d</text></svg></div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-11')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-materi-13')">➡️</button>
+        </div>
+
+        <div id="screen-materi-13" class="screen plain-bg padding-content text-left">
+            <div class="header-materi" style="margin-bottom: 0;"><h2 style="font-size: 26px;">7. Segitiga</h2><div class="ayo-belajar">AYO BELAJAR 👨‍🎓</div></div>
+            <div style="width: 100px; height: 90px; background-color: #f7da00; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); margin-left: 30px;"></div>
+            <p class="mt-20">Segi tiga ialah bangun datar yang di bentuk oleh tiga sisi berupa garis lurus dan memiliki tiga sudut. Segi tiga juga memiliki besar sudut 180°.</p>
+            <div class="rumus-container mt-20">
+                <div class="rumus-text">
+                    <p><strong>Rumus Luas:</strong></p><ul class="no-bullet"><li>• L = 1/2.alas.tinggi</li></ul>
+                    <p><strong>RumusKeliling :</strong></p><ul class="no-bullet"><li>• K = sisi x sisi x sisi</li></ul> 
+                </div>
+                <div class="rumus-ket"><p><strong>Keterangan:</strong></p><p>a = alas<br>t = tinggi<br>s = sisi</p></div>
+                <div class="rumus-visual"><svg width="180" height="130"><polygon points="90,10 160,110 20,110" fill="none" stroke="black" stroke-width="4"/><line x1="90" y1="10" x2="90" y2="110" stroke="black" stroke-dasharray="4" stroke-width="2"/><text x="95" y="60" font-size="18">t</text><text x="85" y="125" font-size="18">a</text><text x="145" y="70" font-size="18">s</text></svg></div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-12')">⬅️</button><button class="nav-btn btn-next" onclick="showScreen('screen-menu')">🏠</button>
+        </div>
+
+        <div id="screen-soal-1" class="screen plain-bg padding-content text-left">
+            <h2 class="title-soal-3d">LATIHAN SOAL</h2>
+            <div class="soal-list mt-20">
+                <p>1. Jumlah sisi pada bangun segitiga adalah ...</p>
+                <div class="pilihan-ganda"><span>a. 4</span><span>b. 5</span><span>c. 3</span><span>d. 7</span></div>
+                <p>2. Bangun datar yang tidak memiliki sudut dan sisi adalah ...</p>
+                <p>3. Sebuah persegi panjang memiliki panjang 10 cm dan lebar 5 cm. Luasnya adalah ... cm²</p>
+                <p>4. Sebuah persegi memiliki panjang sisi 8 cm. Keliling persegi tersebut adalah ... cm</p>
+                <p>5. Sebuah persegi memiliki panjang sisi 8 cm. Keliling persegi tersebut adalah ... cm</p>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-soal-2')">➡️</button>
+        </div>
+
+        <div id="screen-soal-2" class="screen plain-bg padding-content text-left">
+            <h2 class="title-soal-3d">LATIHAN SOAL</h2>
+            <div class="soal-list mt-20" style="font-size: 20px;">
+                <p>6. Andi membuat sebuah layang-layang dengan panjang diagonal 12 cm dan 8 cm. Berapa luas layang-layang tersebut ?</p>
+                <p>7. Ibu memiliki kain berbentuk persegi panjang dengan panjang 15 cm dan lebar 4 cm. Berapa luas kain tersebut?</p>
+                <p>8. Gambar sebuah segitiga dikatakan punya luas 16 cm2 serta tinggi 8 cm. Hitunglah besaran alasnya!</p>
+                <p>9. Sebuah persegi memiliki keliling 40 cm. Tentukan panjang sisi persegi tersebut dan jelaskan caramu!</p>
+                <p>10. Buatlah gambar bangun datar yang kamu ketahui !</p>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-soal-1')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-menu')">🏠</button>
+        </div>
+
+        <div id="screen-game-1" class="screen plain-bg padding-content text-center" style="justify-content: center;">
+            <h2 class="title-soal-3d" style="margin-bottom: 30px;">GAME EDUKASI</h2>
+            <p style="line-height: 1.8; margin-bottom: 50px;">
+                Selamat Datang di game edukasi pada kesempatan kali ini setelah anda melakukan pembelajaran yang cukup melelahkan mari kita resfresh dengan melakukan game yang bisa merefresh otak kita. Kalau setuju ketik gass !!!
+            </p>
+            <div class="gass-container" onclick="resetGame(); showScreen('screen-game-2')">
+                <div class="gass-btn">GASS</div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+        </div>
+
+        <div id="screen-game-2" class="screen plain-bg padding-content text-center" style="justify-content: center;">
+            <svg width="150" height="150" viewBox="0 0 100 100">
+                <path d="M 50,5 L 95,85 A 5,5 0 0,1 90,95 L 10,95 A 5,5 0 0,1 5,85 Z" fill="#ff0000" stroke="#fff" stroke-width="3" />
+                <path d="M 50,15 L 85,85 L 15,85 Z" fill="#ff0000" stroke="#fff" stroke-width="2" />
+                <rect x="45" y="30" width="10" height="35" fill="#fff" rx="3" />
+                <circle cx="50" cy="75" r="6" fill="#fff" />
+            </svg>
+            <h2 style="font-size: 40px; margin-bottom: 20px;">WARNING</h2>
+            <div class="text-left" style="display: inline-block; max-width: 850px; margin: 0 auto; line-height: 1.6;">
+                <p>1. Pastikan anda sudah melakukan sarapan sebelum pergi ke sekolah.</p>
+                <p>2. Pastikan anda sudah berpamitan kepada kedua orang tua sebelum sekolah.</p>
+                <p>3. Pastikan kondisi anda sehat, tidak sakit.</p>
+                <p>4. Yang terakhir yaitu bermain dengan baik dan benar.</p>
+            </div>
+            <p style="margin-top: 30px; font-weight: bold; font-size: 24px;">Semangat!!</p>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-game-q1')">➡️</button>
+        </div>
+
+        <div id="screen-game-q1" class="screen plain-bg padding-content text-center">
+            <h2 class="title-game-q">Sesuaikan gambar dengan bangun datar</h2>
+            <div class="game-img-container"><div style="font-size: 120px;">🚪</div></div>
+            <div class="game-options-row1">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q2')">Persegi <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q2')">Lingkaran <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q2')">Layang-<br>layang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q2')">Trapesium <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+            <div class="game-options-row2">
+                <div class="label-wood" onclick="checkAnswer(this, true, 'screen-game-q2')">Persegi Panjang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+        </div>
+
+        <div id="screen-game-q2" class="screen plain-bg padding-content text-center">
+            <h2 class="title-game-q">Sesuaikan gambar dengan bangun datar</h2>
+            <div class="game-img-container"><div style="font-size: 120px;">⚽</div></div>
+            <div class="game-options-row1">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q3')">Persegi <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, true, 'screen-game-q3')">Lingkaran <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q3')">Layang-<br>layang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q3')">Trapesium <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+            <div class="game-options-row2">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q3')">Persegi Panjang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+        </div>
+
+        <div id="screen-game-q3" class="screen plain-bg padding-content text-center">
+            <h2 class="title-game-q">Sesuaikan gambar dengan bangun datar</h2>
+            <div class="game-img-container"><div style="font-size: 120px;">🪁</div></div>
+            <div class="game-options-row1">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q4')">Persegi <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q4')">Lingkaran <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, true, 'screen-game-q4')">Layang-<br>layang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q4')">Trapesium <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+            <div class="game-options-row2">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q4')">Persegi Panjang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+        </div>
+
+        <div id="screen-game-q4" class="screen plain-bg padding-content text-center">
+            <h2 class="title-game-q">Sesuaikan gambar dengan bangun datar</h2>
+            <div class="game-img-container"><div style="font-size: 120px;">🎁</div></div>
+            <div class="game-options-row1">
+                <div class="label-wood" onclick="checkAnswer(this, true, 'screen-game-q5')">Persegi <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q5')">Lingkaran <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q5')">Layang-<br>layang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q5')">Trapesium <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+            <div class="game-options-row2">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-q5')">Persegi Panjang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+        </div>
+
+        <div id="screen-game-q5" class="screen plain-bg padding-content text-center">
+            <h2 class="title-game-q">Sesuaikan gambar dengan bangun datar</h2>
+            <div class="game-img-container">
+                <div style="width: 150px; height: 100px; background-color: #f26f1f; transform: skewX(-20deg);"></div>
+            </div>
+            <div class="game-options-row1">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-score')">Persegi <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-score')">Lingkaran <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-score')">Layang-<br>layang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+                <div class="label-wood" onclick="checkAnswer(this, true, 'screen-game-score')">Trapesium <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+            <div class="game-options-row2">
+                <div class="label-wood" onclick="checkAnswer(this, false, 'screen-game-score')">Persegi Panjang <span class="leaf-tl">🌿</span><span class="leaf-br">🌿</span></div>
+            </div>
+        </div>
+
+        <div id="screen-game-score" class="screen plain-bg padding-content text-center" style="justify-content: center;">
+            <h2 style="font-size: 36px; font-weight: bold; margin-bottom: 40px;">TOTAL SKOR ANDA :</h2>
+            
+            <div class="score-circles" style="margin-bottom: 30px;">
+                <div class="score-circle">1</div>
+                <div class="score-circle">2</div>
+                <div class="score-circle">3</div>
+                <div class="score-circle">4</div>
+                <div class="score-circle">5</div>
+            </div>
+
+            <h2 id="score-text" style="font-size: 28px; color: #d4632b; font-weight: bold; margin-bottom: 50px;">
+                Benar: 0 | Salah: 0
+            </h2>
+            
+            <h2 style="font-size: 36px; font-weight: bold;">TETAP SEMANGAT BELAJAR!!</h2>
+            <button class="nav-btn btn-next" onclick="resetGame(); showScreen('screen-menu')">➡️</button>
         </div>
 
     </div>
+
+    <button class="btn-fullscreen-toggle" onclick="toggleFullScreen()" title="Layar Penuh (F11)">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
