@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Bangun Datar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <div class="floor"></div>
+
+        <div id="screen-home" class="screen active">
+            <div class="board">
+                <h1>BANGUN DATAR</h1>
+                <div class="shapes-container">
+                    <div class="shape square"></div>
+                    <div class="shape triangle"></div>
+                    <div class="shape parallelogram"></div>
+                </div>
+                <p>Pembelajaran Untuk Siswa Kelas IV</p>
+                <button class="btn-start" onclick="showScreen('screen-menu')">START</button>
+            </div>
+            <div class="deco-item" style="top: 20px; left: 20px; font-size: 50px;">📏</div>
+            <div class="deco-item" style="top: 20px; right: 20px; font-size: 50px;">✏️</div>
+        </div>
+
+        <div id="screen-menu" class="screen">
+            <div class="notebook">
+                <div class="menu-grid">
+                    <button class="icon-btn" onclick="showScreen('screen-profil')"><span>👤</span><br>Profil</button>
+                    <button class="icon-btn" onclick="showScreen('screen-home')"><span>🏠</span><br>Home</button>
+                    <button class="icon-btn" onclick="showScreen('screen-cptp')"><span>🎯</span><br>CP dan TP</button>
+                    
+                    <button class="icon-btn"><span>🎵</span><br>Musik</button>
+                    <button class="icon-btn" onclick="showScreen('screen-materi-1')"><span>📖</span><br>Materi</button>
+                    <button class="icon-btn"><span>❓</span><br>Latihan</button>
+                    
+                    <button class="icon-btn"><span>🎮</span><br>Game</button>
+                    <button class="icon-btn" onclick="showScreen('screen-petunjuk')"><span>⚙️</span><br>Petunjuk</button>
+                    <button class="icon-btn"><span>🚪</span><br>Quit</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-petunjuk" class="screen">
+            <h2 class="title-top">PETUNJUK PENGGUNAAN</h2>
+            <div class="notebook">
+                <div class="petunjuk-grid">
+                    <div class="petunjuk-item"><span>🏠</span> Home</div>
+                    <div class="petunjuk-item"><span>❓</span> Latihan soal</div>
+                    <div class="petunjuk-item"><span>➡️</span> Selanjutnya</div>
+                    <div class="petunjuk-item"><span>🚪</span> Quit</div>
+                    <div class="petunjuk-item"><span>⬅️</span> Sebelumnya</div>
+                    <div class="petunjuk-item"><span>🎮</span> Game</div>
+                    <div class="petunjuk-item"><span>📖</span> Materi</div>
+                    <div class="petunjuk-item"><span>🎵</span> Musik</div>
+                </div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+        </div>
+
+        <div id="screen-profil" class="screen">
+            <h2 class="title-top text-yellow">PROFIL PELAJAR</h2>
+            <div class="notebook text-left">
+                <p><strong>Nama :</strong> Riza Fatchur Rochim</p>
+                <p><strong>Tempat, tanggal lahir :</strong> Nganjuk, 23 April 2004</p>
+                <p><strong>Alamat :</strong> Dk. Patihan Balongrejo Kab. Nganjuk</p>
+                <p><strong>No Hp :</strong> 085730154791</p>
+                <p><strong>E-mail :</strong> rizafatchurr@gmail.com</p>
+                <p><strong>Motto :</strong> Surodiro joyoningrat Lebur Dening Pangestuti</p>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+        </div>
+
+        <div id="screen-cptp" class="screen plain-bg text-left padding-content">
+            <h2 class="text-purple center">CAPAIAN PEMBELAJARAN (CP) DAN TUJUAN<br>PEMBELAJARAN (TP)</h2>
+            
+            <h3>Capaian Pembelajaran (CP) :</h3>
+            <p class="indent">Peserta didik dapat mendeskripsikan ciri berbagai bentuk bangun datar (segiempat, segitiga, segibanyak).</p>
+            
+            <h3 class="mt-20">Tujuan Pembelajaran (TP) :</h3>
+            <ol>
+                <li>Peserta didik dapat mengidentifikasi pengertian materi bangun datar.</li>
+                <li>Peserta didik dapat menyebutkan jenis-jenis bangun datar.</li>
+                <li>Peserta didik dapat menyebutkan sifat-sifat bangun datar segiempat dan segitiga.</li>
+                <li>Peserta didik dapat menguraikan berbagai bentuk bangun datar segiempat dan segitiga.</li>
+            </ol>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+        </div>
+
+        <div id="screen-materi-1" class="screen plain-bg padding-content text-left">
+            <div class="header-materi">
+                <div class="badge">MATERI PEMBELAJARAN<br><span class="circle-num">1</span></div>
+                <h2 class="text-blue">BANGUN DATAR</h2>
+                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            </div>
+            
+            <p class="justify mt-20" style="line-height: 1.8;">
+                Pada hari Minggu Dani, Desi, dan Rika bermain ke rumah Adam. Dirumah Adam mereka bercerita sambil bermain, kemudian kakek Adam datang dan bercerita tentang kemarin baru saja membeli barang perabotan rumah tangga dari pasar dan memiliki berbagai bentuk macam bentuk bangun yang sesuai dengan bangun datar. Mereka sangat menikmati cerita kakek. Bagaimana dengan kamu? apakah kamu mempunyai barang dirumah yang memiliki bentuk bangun datar? seberapa jauh kamu mengenal bangun datar? Coba pelajari agar kamu tahu!
+            </p>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-menu')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-2')">➡️</button>
+        </div>
+
+        <div id="screen-materi-2" class="screen plain-bg padding-content text-left">
+            <div class="header-materi">
+                <h2>Pengertian Bangun Datar</h2>
+                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            </div>
+            <p class="justify" style="line-height: 1.6;">
+                Bangun datar adalah sebuah obyek benda dua dimensi yang dibatasi oleh garis-garis lurus atau garis lengkung. Karena bangun datar merupakan bangun dua dimensi, maka hanya memiliki ukuran panjang dan lebar oleh sebab itu maka bangun datar hanya memiliki luas dan keliling.
+            </p>
+            <h2 class="mt-20">Jenis-jenis Bangun Datar</h2>
+            <div class="list-grid">
+                <div>
+                    1. Persegi<br>
+                    2. Persegi Panjang<br>
+                    3. Jajar Genjang<br>
+                    4. Belah Ketupat
+                </div>
+                <div>
+                    5. Layang-layang<br>
+                    6. Trapesium<br>
+                    7. Segitiga
+                </div>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-1')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-3')">➡️</button>
+        </div>
+
+        <div id="screen-materi-3" class="screen plain-bg padding-content text-left">
+            <div class="header-materi">
+                <h2>Sifat-sifat Bangun Datar</h2>
+                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            </div>
+            <div class="sifat-list mt-20">
+                <h3>1. Persegi</h3>
+                <ul>
+                    <li>Mempunyai dua sisi yang sejajar dan sama panjang.</li>
+                    <li>Mempunyai empat sumbu simetri lipat.</li>
+                    <li>Mempunyai sumbu simetri putar tingkat empat.</li>
+                </ul>
+                
+                <h3 class="mt-20">2. Persegi Panjang</h3>
+                <ul>
+                    <li>Memiliki empat dua diagonal yang sama panjang</li>
+                    <li>Memiliki 3 lipatan simetris</li>
+                    <li>Memiliki simetri putaran dua</li>
+                </ul>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-2')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-4')">➡️</button>
+        </div>
+
+        <div id="screen-materi-4" class="screen plain-bg padding-content text-left">
+            <div class="header-materi">
+                <h2>3. Jajar Genjang</h2>
+                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            </div>
+            <div class="sifat-list">
+                <ul>
+                    <li>Mempunyai 2 diagonal yang berpotong dalam satu titik dan saling membagi 2 sama panjang.</li>
+                    <li>Mempunyai simetri putar tingkat 2 dan tidak memiliki simetri lipat.</li>
+                </ul>
+                
+                <h3 class="mt-20">4. Belah Ketupat</h3>
+                <ul>
+                    <li>Mempunyai sisi — sisi yang sama panjang.</li>
+                    <li>Sudut — sudut yang saling berhadapan sama besar dan dibelah dua oleh diagonal dengan sama besar.</li>
+                    <li>Diagonalnya saling berpotongan sama panjang dan saling tegak lurus.</li>
+                    <li>Mempunyai 2 sumbu simetri.</li>
+                    <li>Mempunyai 2 simetri lipat dan 2 simetri putar.</li>
+                </ul>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-3')">⬅️</button>
+            <button class="nav-btn btn-next" onclick="showScreen('screen-materi-5')">➡️</button>
+        </div>
+
+        <div id="screen-materi-5" class="screen plain-bg padding-content text-left">
+            <div class="header-materi">
+                <h2>5. Layang-layang</h2>
+                <div class="ayo-belajar">AYO BELAJAR 🧑‍🎓</div>
+            </div>
+            <div class="sifat-list">
+                <ul>
+                    <li>Mempunyai 2 pasang sisi yang panjang sama.</li>
+                    <li>Mempunyai satu pasang sudut yang menghadap yang besarnya sama.</li>
+                    <li>Mempunyai empat titik sudut.</li>
+                    <li>Diagonal — diagonalnya saling berpotongan tegak lurus.</li>
+                    <li>Satu diagonalnya dibagi dua sama panjang diagonal yang lain.</li>
+                    <li>Hanya mempunyai satu simetri lipat.</li>
+                </ul>
+                
+                <h3 class="mt-20">6. Trapesium</h3>
+                <ul>
+                    <li>Mempunyai 4 sisi dan 4 titik sudut.</li>
+                    <li>Mempunyai sepasang sisi yang sejajar tapi tidak sama panjang.</li>
+                    <li>Mempunyai sudut di antara sisi sejajarnya sebesar 180°.</li>
+                </ul>
+            </div>
+            <button class="nav-btn btn-prev" onclick="showScreen('screen-materi-4')">⬅️</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
